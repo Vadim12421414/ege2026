@@ -1,0 +1,9 @@
+from itertools import *
+alph=sorted('Солнце')
+cnt=0
+for pos, val in enumerate(product(alph, repeat=6), start=1):
+    val=''.join(val)
+    if pos%2==0 and val[0]!='о' and val[0]!='е':
+        if val.count('ц')==2:
+            cnt+=1
+print(cnt)
