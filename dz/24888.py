@@ -1,5 +1,5 @@
 from itertools import *
-from string import printable
+from string import *
 cnt=0
 for val in product(printable[:16], repeat=4):
     val=''.join(val)
