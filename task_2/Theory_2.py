@@ -4,9 +4,8 @@
 # 3. Логическое сложение / Дизъюнкция (A∨B, A+B, A or B)
 # 4. Следование / Импликация (A→B, A <= B)
 # 5. Тождество / Эквивалентность (A≡B, A == B)
-
 # Исключающее или / XOR (A ⊕ B, A ^ B)
--------------------------------
+#-------------------------------
 # Порядок выполнения операций в Python
 # 1. ()
 # 2. **
@@ -18,19 +17,50 @@
 # 8. not
 # 9. and
 # 10. or
--------------------------
+#-------------------------
 #Пропишем решение 'лесенкой':
-print('A B C D')
-for a in range(2):
-    for b in(0, 1):
-        for c in [0, 1]:
-            for d in 0, 1:
-                f=(not a and not b) or (b==c) or d
+#print('A B C D')
+#for a in range(2):
+ #   for b in(0, 1):
+ #       for c in [0, 1]:
+ #           for d in 0, 1:
+ #               f=(not a and not b) or (b==c) or d
                 #Все строки истинны
-                if f:
-                    print(a, b ,c ,d)
-                #Все строки ложные
-                if not f:
-                    print(a, b, c, d)
-                #Строки в перемешку
-                print(a, b, c, d)
+  #              if f:
+  #                  print(a, b ,c ,d)
+ #               #Все строки ложные
+ #               if not f:
+ #                   print(a, b, c, d)
+#Строки вперемешку
+#                print(a, b, c, d)
+
+#------------------------------------------
+
+#args
+def f1(a, b, c):
+    return a+b+c
+test1=[1,2,3]
+print(f1(*test1))
+
+#kwargs
+def f2(a, b):
+    return a/b
+test2={'a':1, 'b':2}
+print(f2(**test2))
+# zip(p, t) - сопоставляет заголовки из p c значениями из t;
+            # dict(zip(p, t)) - преобразует zip объект в базовый тип данных (словарь);
+            # f(**dict(zip(p, t))) - распаковывает через kwargs все ключи в функцию;
+from itertools import *
+def f(x, y, w, z):
+    return (x and (not y)) or (y==z) or not w
+for i in product((0, 1), repeat=4):
+    table=[
+        (i[0], i[1], 0, 0),
+        (1, 0, i[2], 0),
+        (1, 0, 1, i[3])
+
+    ]
+    if len(set(table))==len(table):
+        for p in permutations('zwyx'):
+            if [f(**dict(zip(p, t))) for t in table]==[0, 0, 0]:
+                print(*p, sep='')
