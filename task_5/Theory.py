@@ -75,5 +75,7 @@ sum2=sum(map(int, num2))
 num3='a'
 sum3=sum(map(lambda x: int(x, 36), num3))
 print(int(num3, 36))
+---------------------------------------------------
+return res[::-1] if res else '0' # если в условии НЕОТРИЦАТЕЛЬНЫЕ!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
