@@ -11,4 +11,4 @@ for val in product(printable[:8], repeat=5):
             val = val.replace(i, '+')
         if '**' not in val and '++' not in val:
             cnt+=1
-print(cnt)
+print(cnt) 
