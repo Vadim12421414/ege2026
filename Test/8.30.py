@@ -1,7 +1,0 @@
-from itertools import *
-
-alph = 'аекнс'
-for pos, val in enumerate(product(alph, repeat=6), start=1):
-    val = ''.join(val)
-    if val == 'сенека':
-        print(pos)
