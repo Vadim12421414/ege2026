@@ -1,6 +1,6 @@
 from math import *
 
-with open(r'27_B_17834.txt') as file:
+with open(r'../27/27_B_17834.txt') as file:
     dots = [list(map(float, i.replace(',', '.').split())) for i in file]
 
 
