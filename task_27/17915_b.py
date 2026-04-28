@@ -1,6 +1,6 @@
 from math import *
 
-with open(r'27_A_17915.txt') as file:
+with open(r'../27/27_A_17915.txt') as file:
     dots = [list(map(float, i.replace(',', '.').split())) for i in file]
 
 def center(cluster):
